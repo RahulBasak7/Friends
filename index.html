@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Pritha 💕</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow-x:hidden;
+position:relative;
+background:
+radial-gradient(circle at top,
+#ffe6f0 0%,
+#ffd1e8 30%,
+#ffc2d9 55%,
+#ffb3c6 75%,
+#f7a1b5 100%);
+}
+
+/* ❄️ Snow */
+.snowflake{
+position:absolute;
+top:-20px;
+color:white;
+font-size:14px;
+opacity:.6;
+pointer-events:none;
+animation:fall linear infinite;
+}
+@keyframes fall{
+to{transform:translateY(120vh)}
+}
+
+/* 🎈 Floating Emojis */
+.floating-up,.floating-down{
+position:absolute;
+font-size:2.6em;
+opacity:.9;
+pointer-events:none;
+}
+.floating-down{
+top:-80px;
+animation:floatDown linear infinite;
+}
+.floating-up{
+bottom:-80px;
+animation:floatUp linear infinite;
+}
+@keyframes floatDown{to{transform:translateY(120vh)}}
+@keyframes floatUp{to{transform:translateY(-120vh)}}
+
+.container{
+text-align:center;
+position:relative;
+z-index:2;
+max-width:1400px;
+padding:30px;
+}
+
+/* 🎉 Header */
+.birthday-header{
+margin-bottom:35px;
+animation:slideDown 1s ease;
+}
+@keyframes slideDown{
+from{transform:translateY(-80px);opacity:0}
+to{transform:translateY(0);opacity:1}
+}
+
+.birthday-title{
+font-size:4em;
+font-weight:900;
+color:#d6336c;
+text-shadow:
+0 0 20px rgba(255,255,255,.9),
+0 0 40px rgba(214,51,108,.6);
+animation:glow 2s infinite;
+}
+@keyframes glow{
+50%{text-shadow:0 0 35px rgba(255,255,255,1)}
+}
+
+.subtitle{
+font-size:1.7em;
+color:#b02a5b;
+margin-top:10px;
+}
+
+.date-badge{
+display:inline-block;
+margin-top:15px;
+padding:14px 38px;
+border-radius:50px;
+font-size:1.3em;
+font-weight:bold;
+color:white;
+background:linear-gradient(135deg,#ff6f91,#ff9a9e);
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* 📦 IMAGE + BOX ROW */
+.image-row{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:35px;
+flex-wrap:nowrap;
+}
+
+/* 🖼 Main Image */
+.image-frame{
+background:white;
+padding:18px;
+border-radius:35px;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+position:relative;
+animation:zoomIn 1s ease;
+}
+@keyframes zoomIn{
+from{transform:scale(.7);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+
+/* ⬅️⬆️ MAIN IMAGE WIDTH INCREASED (BALANCED) */
+.main-image{
+width:420px;           /* increased from 360px */
+border-radius:25px;
+filter:brightness(1.05) contrast(1.1);
+}
+
+/* 💕✨ Sparkles */
+.sparkles span{
+position:absolute;
+font-size:1.8em;
+animation:sparkle 1.6s infinite;
+}
+@keyframes sparkle{
+0%,100%{opacity:0;transform:scale(0)}
+50%{opacity:1;transform:scale(1)}
+}
+
+/* 🎁 Wish Card */
+.wish-card{
+margin:30px auto 0;
+max-width:560px;
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(12px);
+padding:28px;
+border-radius:30px;
+box-shadow:0 18px 40px rgba(0,0,0,.25);
+animation:slideUp 1s ease;
+}
+@keyframes slideUp{
+from{transform:translateY(50px);opacity:0}
+to{transform:translateY(0);opacity:1}
+}
+
+.wish-text{
+font-size:1.5em;
+color:#6a1a3c;
+line-height:1.7;
+font-weight:500;
+}
+
+/* 🎁 3D CUBE */
+.cube-scene{
+width:150px;
+height:150px;
+perspective:900px;
+}
+
+.cube{
+width:100%;
+height:100%;
+position:relative;
+transform-style:preserve-3d;
+animation:rotateCube 10s linear infinite;
+}
+
+.cube-face{
+position:absolute;
+width:150px;
+height:150px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.cube-face img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.front{transform:rotateY(0deg) translateZ(75px)}
+.back{transform:rotateY(180deg) translateZ(75px)}
+.right{transform:rotateY(90deg) translateZ(75px)}
+.left{transform:rotateY(-90deg) translateZ(75px)}
+.top{transform:rotateX(90deg) translateZ(75px)}
+.bottom{transform:rotateX(-90deg) translateZ(75px)}
+
+@keyframes rotateCube{
+from{transform:rotateX(0deg) rotateY(0deg)}
+to{transform:rotateX(360deg) rotateY(360deg)}
+}
+
+/* 📱 Responsive */
+@media(max-width:1024px){
+.image-row{flex-wrap:wrap}
+.main-image{width:320px}
+}
+
+@media(max-width:768px){
+.birthday-title{font-size:2.6em}
+.subtitle{font-size:1.3em}
+.main-image{width:280px}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+/* ❄️ Snow */
+for(let i=0;i<35;i++){
+const s=document.createElement("div");
+s.className="snowflake";
+s.innerHTML="❄";
+s.style.left=Math.random()*100+"%";
+s.style.fontSize=(Math.random()*10+10)+"px";
+s.style.animationDuration=(Math.random()*4+4)+"s";
+document.body.appendChild(s);
+}
+
+/* 🎈 Floating Emojis */
+const icons=["🎈","🎊","💕","✨"];
+for(let i=0;i<24;i++){
+const f=document.createElement("div");
+f.className=Math.random()>0.5?"floating-up":"floating-down";
+f.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+f.style.left=Math.random()*100+"%";
+f.style.animationDuration=(Math.random()*6+6)+"s";
+f.style.fontSize=(Math.random()*14+24)+"px";
+document.body.appendChild(f);
+}
+</script>
+
+<div class="container">
+
+<div class="birthday-header">
+<h1 class="birthday-title">💕 Happy Birthday Pritha ✨</h1>
+<p class="subtitle">HAVE A GREAT AHEAD AND ONE OF THE BEST YEAR IN YOUR LIFE</p>
+<div class="date-badge">25th December</div>
+</div>
+
+<div class="image-row">
+
+<!-- LEFT CUBE -->
+<div class="cube-scene">
+<div class="cube">
+<div class="cube-face front"><img src="pritha_birthday.png"></div>
+<div class="cube-face back"><img src="pritha_birthday.png"></div>
+<div class="cube-face right"><img src="pritha_birthday.png"></div>
+<div class="cube-face left"><img src="pritha_birthday.png"></div>
+<div class="cube-face top"><img src="pritha_birthday.png"></div>
+<div class="cube-face bottom"><img src="pritha_birthday.png"></div>
+</div>
+</div>
+
+<!-- MAIN IMAGE -->
+<div class="image-frame">
+<img src="pritha_birthday.png" class="main-image">
+<div class="sparkles">
+<span style="top:8%;left:10%">💕</span>
+<span style="top:12%;right:12%">✨</span>
+<span style="bottom:12%;left:12%">💕</span>
+<span style="bottom:10%;right:10%">✨</span>
+</div>
+</div>
+
+<!-- RIGHT CUBE -->
+<div class="cube-scene">
+<div class="cube">
+<div class="cube-face front"><img src="pritha_birthday.png"></div>
+<div class="cube-face back"><img src="pritha_birthday.png"></div>
+<div class="cube-face right"><img src="pritha_birthday.png"></div>
+<div class="cube-face left"><img src="pritha_birthday.png"></div>
+<div class="cube-face top"><img src="pritha_birthday.png"></div>
+<div class="cube-face bottom"><img src="pritha_birthday.png"></div>
+</div>
+</div>
+
+</div>
+
+<div class="wish-card">
+<div class="wish-text">
+💕✨  
+Many many happy returns of the Day.Gob bless You.All Your dreams come true.I pray to God that You may achieve all things which you want to achieve in the life and it is the best year in your life.
+I want to tell something...I think that I was doing some bad behaviour with you at the past.Please forgive this friend.Once Again Happy Birthday 🎂.
+ <strong>DAY IS YOURS PRITHA💖.</strong> <strong>Enjoy Your Day</strong>  
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
